@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "firstname": "John",
+  "lastname": "Doe",
+  "birthday": "1998-02-12",
+  "address": "21 Jump Street",
+  "school_id": 3
+}
