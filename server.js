@@ -4,6 +4,10 @@ const port = 5000;
 
 const app = express();
 
+// Indiquer à Express qu'il doit analyser
+// les données entrantes en JSON
+app.use(express.json());
+
 // Routes
 
 app.get('/', (req, res) => {
@@ -16,6 +20,16 @@ const users = [
   { id: 1, name: 'John Lennon' },
   { id: 2, name: 'Ringo Starr' }
 ];
+
+// Créer un utilisateur
+app.post('/users', (req, res) => {
+  const newUser = {
+    id: users.length + 1,
+    name: req.body.name
+  }
+  users.push(newUser);
+  res.send(newUser);
+});
 
 // Récupérer une liste d'utilisateurs
 app.get('/users', (req, res) => {
